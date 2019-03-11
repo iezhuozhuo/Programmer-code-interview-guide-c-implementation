@@ -3,8 +3,8 @@
 void rotateEdge(vector<vector<int>>& m, int tc, int tr, int dc, int dr){
 	int time = dc - tc;
 	for(int i = 0;i != time;i++){
-		int temp = m[tr][tc + i];
-		m[tr][tc + i] = m[dr - i][tc];
+		int temp = m[tr][tc + i]; //小技巧：可以画图看 
+		m[tr][tc + i] = m[dr - i][tc]; // 上步变得这步不变 设计到dr、dc的都减 涉及到tc、tr的都加
 		m[dr - i][tc] = m[dr][dc - i];
 		m[dr][dc - i] = m[tr + i][dc];
 		m[tr + i][dc] = temp;
